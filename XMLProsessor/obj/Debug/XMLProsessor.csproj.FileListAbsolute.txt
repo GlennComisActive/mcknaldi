@@ -1,0 +1,15 @@
+C:\Users\dvdbe\Documenten\Visual Studio 2017\Projects\MCklandi\mcknaldi\XMLProsessor\bin\Debug\XMLProsessor.exe.config
+C:\Users\dvdbe\Documenten\Visual Studio 2017\Projects\MCklandi\mcknaldi\XMLProsessor\bin\Debug\XMLProsessor.exe
+C:\Users\dvdbe\Documenten\Visual Studio 2017\Projects\MCklandi\mcknaldi\XMLProsessor\bin\Debug\XMLProsessor.pdb
+C:\Users\dvdbe\Documenten\Visual Studio 2017\Projects\MCklandi\mcknaldi\XMLProsessor\obj\Debug\XMLProsessor.csproj.CoreCompileInputs.cache
+C:\Users\dvdbe\Documenten\Visual Studio 2017\Projects\MCklandi\mcknaldi\XMLProsessor\obj\Debug\XMLProsessor.exe
+C:\Users\dvdbe\Documenten\Visual Studio 2017\Projects\MCklandi\mcknaldi\XMLProsessor\obj\Debug\XMLProsessor.pdb
+C:\Users\dvdbe\Documenten\Visual Studio 2017\Projects\MCklandi\mcknaldi\XMLProsessor\obj\Debug\XMLProsessor.csprojResolveAssemblyReference.cache
+C:\Users\dvdbe\Documenten\Visual Studio 2017\Projects\MCklandi\mcknaldi\XMLProsessor\bin\Debug\EntityFramework.dll
+C:\Users\dvdbe\Documenten\Visual Studio 2017\Projects\MCklandi\mcknaldi\XMLProsessor\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\dvdbe\Documenten\Visual Studio 2017\Projects\MCklandi\mcknaldi\XMLProsessor\bin\Debug\EntityFramework.xml
+C:\Users\dvdbe\Documenten\Visual Studio 2017\Projects\MCklandi\mcknaldi\XMLProsessor\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\dvdbe\Documenten\Visual Studio 2017\Projects\MCklandi\mcknaldi\XMLProsessor\obj\Debug\XMLProsessor.csproj.CopyComplete
+C:\Users\dvdbe\Documenten\Visual Studio 2017\Projects\MCklandi\mcknaldi\XMLProsessor\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Users\dvdbe\Documenten\Visual Studio 2017\Projects\MCklandi\mcknaldi\XMLProsessor\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Users\dvdbe\Documenten\Visual Studio 2017\Projects\MCklandi\mcknaldi\XMLProsessor\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml

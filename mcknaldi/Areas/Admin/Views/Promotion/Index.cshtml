@@ -1,0 +1,46 @@
+﻿@model IEnumerable<mcknaldi.Models.Promotion>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Aanbiedings actie's</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DiscountPrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ValidUntil)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductEAN)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DiscountPrice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ValidUntil)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProductEAN)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,2 +1,3 @@
 # mcknaldi
-school project
+
+School project Jens, Dylan en glenn
