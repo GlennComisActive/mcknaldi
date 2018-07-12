@@ -13,3 +13,5 @@ mcknaldi/bin/roslyn/System.IO.FileSystem.Primitives.dll
 mcknaldi/bin/roslyn/System.Reflection.Metadata.dll
 mcknaldi/bin/roslyn/System.Security.Cryptography.Primitives.dll
 mcknaldi/bin/roslyn/VBCSCompiler.exe
+mcknaldi/App_Data/aspnet-mcknaldi-20180529012852.mdf
+mcknaldi/App_Data/aspnet-mcknaldi-20180529012852_log.ldf
