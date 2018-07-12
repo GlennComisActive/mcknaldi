@@ -80,14 +80,34 @@ namespace mcknaldi.Models
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
 
-        public string AddressCode { get; set; }
-        public string Address { get; set; }
-        public string City { get; set; }
-        public string Country { get; set; }
-        public bool MadeByAdmin { get; set; }
+        [Required]
+        [Display(Name = "Voornaam")]
         public string Firstname { get; set; }
+
+        [Display(Name = "Tussenvoegsel")]
         public string Infix { get; set; }
+
+        [Required]
+        [Display(Name = "Achternaam")]
         public string Surname { get; set; }
+
+        [Required]
+        [Display(Name = "Land")]
+        public string Country { get; set; }
+
+        [Required]
+        [Display(Name = "Woonplaats")]
+        public string City { get; set; }
+
+        [Required]
+        [Display(Name = "Adres")]
+        public string Address { get; set; }
+
+        [Required]
+        [Display(Name = "Postcode")]
+        public string PostalCode { get; set; }
+
+        public bool MadeByAdmin { get; set; }
     }
 
     public class ResetPasswordViewModel

@@ -56,6 +56,20 @@ namespace mcknaldi.Models
         [Display(Name = "Confirm new password")]
         [Compare("NewPassword", ErrorMessage = "The new password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+
+        [Display(Name = "Land")]
+        public string Country { get; set; }
+
+        [Display(Name = "Woonplaats")]
+        public string City { get; set; }
+
+        [Display(Name = "Adres")]
+        public string Address { get; set; }
+
+        [Display(Name = "Postcode")]
+        public string PostalCode { get; set; }
+
+        public bool MadeByAdmin { get; set; }
     }
 
     public class AddPhoneNumberViewModel

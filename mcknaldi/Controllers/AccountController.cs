@@ -153,7 +153,7 @@ namespace mcknaldi.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var user = new ApplicationUser { UserName = model.Email, Email = model.Email, Firstname = model.Firstname, Infix = model.Infix, Surname = model.Infix, Country = model.Country, City= model.City, Address = model.Address, PostalCode = model.PostalCode};
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {

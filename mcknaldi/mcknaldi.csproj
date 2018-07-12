@@ -223,6 +223,18 @@
     <Compile Include="Migrations\201806290850540_modelupdate.Designer.cs">
       <DependentUpon>201806290850540_modelupdate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201807121854563_application-user-changes.cs" />
+    <Compile Include="Migrations\201807121854563_application-user-changes.Designer.cs">
+      <DependentUpon>201807121854563_application-user-changes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201807121904489_changes-manageviewmodel.cs" />
+    <Compile Include="Migrations\201807121904489_changes-manageviewmodel.Designer.cs">
+      <DependentUpon>201807121904489_changes-manageviewmodel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201807121916235_change-bezorgadres.cs" />
+    <Compile Include="Migrations\201807121916235_change-bezorgadres.Designer.cs">
+      <DependentUpon>201807121916235_change-bezorgadres.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApiCalls.cs" />
@@ -544,6 +556,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201806290850540_modelupdate.resx">
       <DependentUpon>201806290850540_modelupdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807121854563_application-user-changes.resx">
+      <DependentUpon>201807121854563_application-user-changes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807121904489_changes-manageviewmodel.resx">
+      <DependentUpon>201807121904489_changes-manageviewmodel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807121916235_change-bezorgadres.resx">
+      <DependentUpon>201807121916235_change-bezorgadres.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
