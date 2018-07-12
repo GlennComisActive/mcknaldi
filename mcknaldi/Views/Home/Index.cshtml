@@ -1,70 +1,60 @@
-﻿<!--model IEnumerable<object>-->
-@model IEnumerable<mcknaldi.Models.Product>
+﻿@model  mcknaldi.Models.HomePageViewModel
 
 @{
     ViewBag.Title = "Home Page";
-    /* List<mcknaldi.Models.Product> products = Model.ToList()[0] as List<mcknaldi.Models.Product>;
-     List<mcknaldi.Models.Promotion> promotions = Model.ToList()[1] as List<mcknaldi.Models.Promotion>;*/
-
 }
 
 
 
 <!--PRODUCTS -->
-<table class="table">
+
+@foreach (var item in Model.Products)
+{
     <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Category.Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.EAN)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Title)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Brand)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Image)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Weight)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Price)
-        </th>
-        <th></th>
+        <td>
+            @Html.DisplayFor(modelItem => item.Category.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EAN)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Brand)
+        </td>
+        <td>
+            <img src="@Html.DisplayFor(modelItem => item.Image)" style="max-width:100px;" />
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Weight)
+        </td>
+        <td>
+            €@Html.DisplayFor(modelItem => item.Price)
+        </td>
+        <td>
+            @Html.ActionLink("Details", "Details", new { id = item.Id })
+        </td>
     </tr>
+}
 
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Category.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.EAN)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Title)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Brand)
-            </td>
-            <td>
-                <img src="@Html.DisplayFor(modelItem => item.Image)" style="max-width:100px;" />
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Weight)
-            </td>
-            <td>
-                €@Html.DisplayFor(modelItem => item.Price)
-            </td>
-            <td>
-                @Html.ActionLink("Details", "Details", new { id = item.Id })
-            </td>
-        </tr>
-    }
+@foreach (var item in Model.Promotions) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Title)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.DiscountPrice)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ValidUntil)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ProductEAN)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.Id })
+    </td>
+</tr>
+}
 
-</table>

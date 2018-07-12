@@ -13,11 +13,11 @@ namespace mcknaldi.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
         public ActionResult Index()
         {
-            /*List<object> myModels = new List<object>();
-            myModels.Add(db.Products.ToList());
-            myModels.Add(db.Promotions.ToList());*/
-            var products = db.Products;
-            return View(products.ToList());
+            HomePageViewModel HPVM = new HomePageViewModel();
+            HPVM.Products = db.Products.ToList();
+            HPVM.Promotions = db.Promotions.ToList();
+            HPVM.Articles = db.Articles.ToList();
+            return View(HPVM);
         }
 
         public ActionResult About()

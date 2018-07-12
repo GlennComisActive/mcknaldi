@@ -29,5 +29,6 @@ namespace mcknaldi.Models
         [Display(Name = "EAN")]
         public long ProductEAN { get; set; }
         public virtual Product Product { get; set; }
+        
     }
 }
