@@ -16,14 +16,14 @@ namespace mcknaldi.Models
             // Add custom user claims here
             return userIdentity;
         }
-        public string AddressCode { get; set; }
-        public string Address { get; set; }
-        public string City { get; set; }
-        public string Country { get; set; }
-        public bool MadeByAdmin { get; set; }
         public string Firstname { get; set; }
         public string Infix { get; set; }
         public string Surname { get; set; }
+        public string Country { get; set; }
+        public string City { get; set; }
+        public string Address { get; set; }
+        public string PostalCode { get; set; }
+        public bool MadeByAdmin { get; set; }
     }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
