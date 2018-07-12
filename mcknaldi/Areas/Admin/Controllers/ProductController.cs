@@ -15,9 +15,15 @@ namespace mcknaldi.Areas.Admin.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Admin/Product
-        public ActionResult Index()
+        public ActionResult Index(string searchString)
         {
+
             var products = db.Products.Include(p => p.Category);
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                products = products.Where(p => p.Title.Contains(searchString)
+                                       || p.Brand.Contains(searchString));
+            }
             return View(products.ToList());
         }
 

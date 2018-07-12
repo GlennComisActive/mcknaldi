@@ -29,6 +29,10 @@
         <dt>
             @Html.DisplayNameFor(model => model.Content)
         </dt>
+        
+        <dd class="fr-view">
+            @Html.Raw(Model.Content)
+        </dd>
 
         <dd>
             @Html.DisplayFor(model => model.Content)

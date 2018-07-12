@@ -1,0 +1,328 @@
+﻿@using Microsoft.AspNet.Identity
+
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../../../favicon.ico">
+    <!-- Google Font: Source Sans Pro -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">\
+
+    <!-- Bootstrap core CSS -->
+    <link href="~/Content/bootstrap2.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="~/Content/Test.css" rel="stylesheet">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/codemirror.min.css">
+
+    <!-- Include Editor style. -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.7.6/css/froala_editor.pkgd.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.7.6/css/froala_style.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- Include Font Awesome. -->
+    <link href="~/Content/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <!-- Include Froala Editor styles -->
+    <link rel="stylesheet" href="~/Scripts/froala-editor/css/froala_editor.min.css" />
+    <link rel="stylesheet" href="~/Scripts/froala-editor/css/froala_style.min.css" />
+    <!-- Include Froala Editor Plugins styles -->
+    <link rel="stylesheet" href="~/Scripts/froala-editor/css/plugins/char_counter.css">
+    <link rel="stylesheet" href="~/Scripts/froala-editor/css/plugins/code_view.css">
+    <link rel="stylesheet" href="~/Scripts/froala-editor/css/plugins/colors.css">
+    <link rel="stylesheet" href="~/Scripts/froala-editor/css/plugins/emoticons.css">
+    <link rel="stylesheet" href="~/Scripts/froala-editor/css/plugins/file.css">
+    <link rel="stylesheet" href="~/Scripts/froala-editor/css/plugins/fullscreen.css">
+    <link rel="stylesheet" href="~/Scripts/froala-editor/css/plugins/image_manager.css">
+    <link rel="stylesheet" href="~/Scripts/froala-editor/css/plugins/image.css">
+    <link rel="stylesheet" href="~/Scripts/froala-editor/css/plugins/line_breaker.css">
+    <link rel="stylesheet" href="~/Scripts/froala-editor/css/plugins/table.css">
+    <link rel="stylesheet" href="~/Scripts/froala-editor/css/plugins/video.css">
+    <!-- extra style plugins-->
+    <link rel="stylesheet" href="~/Scripts/froala-editor/css/plugins/code_view.min.css">
+    <!-- Include Froala Editor -->
+    <script src="~/Scripts/froala-editor/js/froala_editor.min.js"></script>
+    <!-- Include Froala Editor Plugins -->
+    <script src="~/Scripts/froala-editor/js/plugins/align.min.js"></script>
+    <script src="~/Scripts/froala-editor/js/plugins/char_counter.min.js"></script>
+    <script src="~/Scripts/froala-editor/js/plugins/code_beautifier.min.js"></script>
+    <script src="~/Scripts/froala-editor/js/plugins/code_view.min.js"></script>
+    <script src="~/Scripts/froala-editor/js/plugins/colors.min.js"></script>
+    <script src="~/Scripts/froala-editor/js/plugins/emoticons.min.js"></script>
+    <script src="~/Scripts/froala-editor/js/plugins/entities.min.js"></script>
+    <script src="~/Scripts/froala-editor/js/plugins/file.min.js"></script>
+    <script src="~/Scripts/froala-editor/js/plugins/font_family.min.js"></script>
+    <script src="~/Scripts/froala-editor/js/plugins/font_size.min.js"></script>
+    <script src="~/Scripts/froala-editor/js/plugins/fullscreen.min.js"></script>
+    <script src="~/Scripts/froala-editor/js/plugins/image.min.js"></script>
+    <script src="~/Scripts/froala-editor/js/plugins/image_manager.min.js"></script>
+    <script src="~/Scripts/froala-editor/js/plugins/inline_style.min.js"></script>
+    <script src="~/Scripts/froala-editor/js/plugins/line_breaker.min.js"></script>
+    <script src="~/Scripts/froala-editor/js/plugins/link.min.js"></script>
+    <script src="~/Scripts/froala-editor/js/plugins/lists.min.js"></script>
+    <script src="~/Scripts/froala-editor/js/plugins/paragraph_format.min.js"></script>
+    <script src="~/Scripts/froala-editor/js/plugins/paragraph_style.min.js"></script>
+    <script src="~/Scripts/froala-editor/js/plugins/quote.min.js"></script>
+    <script src="~/Scripts/froala-editor/js/plugins/save.min.js"></script>
+    <script src="~/Scripts/froala-editor/js/plugins/table.min.js"></script>
+    <script src="~/Scripts/froala-editor/js/plugins/video.min.js"></script>
+    <!-- extra plugins-->
+    <script src="~/Scripts/froala-editor/js/plugins/code_view.min.js"></script>
+    <script src="~/Scripts/froala-editor/js/plugins/code_beautifier.min.js"></script>
+    <script src="~/Scripts/froala-editor/js/plugins/word_paste.min.js"></script>
+    <!-- End Froala -->
+</head>
+
+<body>
+    <!-- Include external JS libs. -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/codemirror.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/mode/xml/xml.min.js"></script>
+
+    <!-- Include Editor JS files. -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.7.6/js/froala_editor.pkgd.min.js"></script>
+    <script type="text/javascript" src=""></script>
+
+    <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+        <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="~/Home/index">McKnaldi</a>
+        @Html.Partial("_LoginPartial")
+    </nav>
+    <!--Sidebar (NAV)-->
+    <div class="container-fluid">
+        <div class="row">
+            <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+                <div class="sidebar-sticky">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link " href="~/Admin/Dashboard/Index">
+                                <span data-feather="home"></span>
+                                Dashboard <span class="sr-only">(current)</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="~/Admin/Articles/Index">
+                                <span data-feather="file"></span>
+                                Niewsberichten
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="~/Admin/Product/Index">
+                                <span data-feather="shopping-cart"></span>
+                                Producten
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="~/Admin/Category/Index">
+                                <span data-feather="users"></span>
+                                Categoriën
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="~/Admin/Promotion/Index">
+                                <span data-feather="users"></span>
+                                Aanbiedingen
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+
+                @RenderBody()
+
+
+            </main>
+        </div>
+    </div>
+
+
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="../../../../assets/js/vendor/popper.min.js"></script>
+    <script src="../../../../dist/js/bootstrap.min.js"></script>
+
+    <!-- Icons -->
+    <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
+    <script>
+        feather.replace()
+    </script>
+
+    <!-- Graphs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
+    <script>
+
+    $(function () {
+    $('textarea').froalaEditor({
+    imageUploadURL: '/FroalaApi/UploadImage',
+    fileUploadURL: '/FroalaApi/UploadFile',
+    imageManagerLoadURL: '/FroalaApi/LoadImages',
+    imageManagerDeleteURL: "/FroalaApi/DeleteImage",
+    imageManagerDeleteMethod: "POST"
+    })
+    // Catch image removal from the editor.
+    .on('froalaEditor.image.removed', function (e, editor, $img) {
+    $.ajax({
+    // Request method.
+    method: "POST",
+
+    // Request URL.
+    url: "/FroalaApi/DeleteImage",
+
+    // Request params.
+    data: {
+    src: $img.attr('src')
+    }
+    })
+    .done(function (data) {
+    console.log('image was deleted');
+    })
+    .fail(function (err) {
+    console.log('image delete problem: ' + JSON.stringify(err));
+    })
+    })
+    // Catch image removal from the editor.
+    .on('froalaEditor.file.unlink', function (e, editor, link) {
+    $.ajax({
+    // Request method.
+    method: "POST",
+
+    // Request URL.
+    url: "/FroalaApi/DeleteFile",
+
+    // Request params.
+    data: {
+    src: link.getAttribute('href')
+    }
+    })
+    .done(function (data) {
+    console.log('file was deleted');
+    })
+    .fail(function (err) {
+    console.log('file delete problem: ' + JSON.stringify(err));
+    })
+    })
+
+    $('#edit-resize').froalaEditor({
+    imageUploadURL: '/FroalaApi/UploadImageResize',
+    fileUploadURL: '/FroalaApi/UploadFile',
+    imageManagerLoadURL: '/FroalaApi/LoadImages',
+    imageManagerDeleteURL: "/FroalaApi/DeleteImage",
+    imageManagerDeleteMethod: "POST"
+    })
+    // Catch image removal from the editor.
+    .on('froalaEditor.image.removed', function (e, editor, $img) {
+    $.ajax({
+    // Request method.
+    method: "POST",
+
+    // Request URL.
+    url: "/FroalaApi/DeleteImage",
+
+    // Request params.
+    data: {
+    src: $img.attr('src')
+    }
+    })
+    .done(function (data) {
+    console.log('image was deleted');
+    })
+    .fail(function (err) {
+    console.log('image delete problem: ' + JSON.stringify(err));
+    })
+    })
+
+    // Catch image removal from the editor.
+    .on('froalaEditor.file.unlink', function (e, editor, link) {
+    $.ajax({
+    // Request method.
+    method: "POST",
+
+    // Request URL.
+    url: "/FroalaApi/DeleteFile",
+
+    // Request params.
+    data: {
+    src: link.getAttribute('href')
+    }
+    })
+    .done(function (data) {
+    console.log('file was deleted');
+    })
+    .fail(function (err) {
+    console.log('file delete problem: ' + JSON.stringify(err));
+    })
+    });
+
+    $('edit').froalaEditor({
+    imageUploadURL: '/FroalaApi/UploadImageValidation',
+    imageUploadParam: 'myImage',
+    fileUploadURL: '/FroalaApi/UploadFileValidation',
+    fileUploadParam: 'myFile',
+    fileMaxSize: 1024 * 1024 * 50,
+    imageManagerLoadURL: '/FroalaApi/LoadImages',
+    imageManagerDeleteURL: "/FroalaApi/DeleteImage",
+    imageManagerDeleteMethod: "POST"
+    })
+    // Catch image removal from the editor.
+    .on('froalaEditor.image.removed', function (e, editor, $img) {
+    $.ajax({
+    // Request method.
+    method: "POST",
+
+    // Request URL.
+    url: "/FroalaApi/DeleteImage",
+
+    // Request params.
+    data: {
+    src: $img.attr('src')
+    }
+    })
+    .done(function (data) {
+    console.log('image was deleted');
+    })
+    .fail(function (err) {
+    console.log('image delete problem: ' + JSON.stringify(err));
+    })
+    })
+    // Catch image removal from the editor.
+    .on('froalaEditor.file.unlink', function (e, editor, link) {
+    $.ajax({
+    // Request method.
+    method: "POST",
+
+    // Request URL.
+    url: "/FroalaApi/DeleteFile",
+
+    // Request params.
+    data: {
+    src: link.getAttribute('href')
+    }
+    })
+    .done(function (data) {
+    console.log('file was deleted');
+    })
+    .fail(function (err) {
+    console.log('file delete problem: ' + JSON.stringify(err));
+    })
+    })
+
+    $.get("/FroalaApi/S3Signature", {})
+    .done(function (data) {
+    $('#edit-amazon').froalaEditor({
+    imageUploadToS3: data,
+    fileUploadToS3: data
+    })
+    });
+    });
+    </script>
+</body>
+</html>

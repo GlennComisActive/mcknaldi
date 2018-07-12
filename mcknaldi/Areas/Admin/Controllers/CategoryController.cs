@@ -16,6 +16,7 @@ namespace mcknaldi.Areas.Admin.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Admin/Category
+        [Authorize(Roles = "Admin")]
         public ActionResult Index()
         {
             var categories = db.Categories.Include(c => c.Parent);
@@ -23,6 +24,7 @@ namespace mcknaldi.Areas.Admin.Controllers
         }
 
         // GET: Admin/Category/Details/5
+        [Authorize(Roles = "Admin")]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -55,7 +57,8 @@ namespace mcknaldi.Areas.Admin.Controllers
             {
                 db.Categories.Add(category);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+               
+                    return RedirectToAction("Index");
             }
 
             ViewBag.ParentId = new SelectList(db.Categories, "Id", "Name", category.ParentId);
@@ -94,7 +97,7 @@ namespace mcknaldi.Areas.Admin.Controllers
                     // directory aanmaken
                     var uploadPath = Path.Combine(Server.MapPath("~/Uploads/Content"), category.Id.ToString());
                     Directory.CreateDirectory(uploadPath);
-                    // TODO: oude afbeelding verwijderen
+                    
                     // bestandsnaam maken, op basis van een random string (GUID)
                     string fileGuid = Guid.NewGuid().ToString();
                     string extension = Path.GetExtension(ImageUpload.FileName);

@@ -2,6 +2,7 @@
 
 @{
     ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
 }
 
 <h2>Index</h2>
@@ -44,7 +45,7 @@
             @Html.DisplayFor(modelItem => item.Content)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.ImagePath)
+            <img src="~/Uploads/Content/@item.Id/@item.ImagePath" style="width:100px;height:auto;" />
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.CreatedAt)

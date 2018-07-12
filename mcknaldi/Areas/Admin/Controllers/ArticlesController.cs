@@ -7,6 +7,12 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using mcknaldi.Models;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.Owin;
+using System.Web.Security;
+using Newtonsoft.Json;
+using System.Collections;
+using System.IO;
 
 namespace mcknaldi.Areas.Admin.Controllers
 {
@@ -15,12 +21,16 @@ namespace mcknaldi.Areas.Admin.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Admin/Articles
+        [Authorize(Roles = "Admin")]
         public ActionResult Index()
         {
             return View(db.Articles.ToList());
+
+            
         }
 
         // GET: Admin/Articles/Details/5
+        [Authorize(Roles = "Admin")]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -36,6 +46,7 @@ namespace mcknaldi.Areas.Admin.Controllers
         }
 
         // GET: Admin/Articles/Create
+        [Authorize(Roles = "Admin")]
         public ActionResult Create()
         {
             return View();
@@ -46,21 +57,41 @@ namespace mcknaldi.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Title,Description,Content,ImagePath")] Article article)
+        [Authorize(Roles = "Admin")]
+        public ActionResult Create([Bind(Include = "Id,Title,Description,Content,ImageUpload,ImagePath")] Article article, HttpPostedFileBase ImageUpload)
         {
             if (ModelState.IsValid)
             {
-                article.CreatedAt = DateTime.Now;
-                article.UpdatedAt = DateTime.Now;
                 db.Articles.Add(article);
                 db.SaveChanges();
-                return RedirectToAction("Index");
-            }
 
+                if (ImageUpload != null && ImageUpload.ContentLength > 0)
+                {
+                    // directory aanmaken
+                    var uploadPath = Path.Combine(Server.MapPath("~/Uploads/Content"),
+                    article.Id.ToString());
+                    Directory.CreateDirectory(uploadPath);
+                    // TODO: oude afbeelding verwijderen
+                    // bestandsnaam maken, op basis van een random string (GUID)
+                    string fileGuid = Guid.NewGuid().ToString();
+                    string extension = Path.GetExtension(ImageUpload.FileName);
+                    string newFilename = fileGuid + extension;
+                    // bestand opslaan
+                    ImageUpload.SaveAs(Path.Combine(uploadPath, newFilename));
+                    // opslaan in database
+                    article.ImagePath = newFilename;
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+               
+            }
             return View(article);
         }
 
+
+
         // GET: Admin/Articles/Edit/5
+        [Authorize(Roles = "Admin")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -80,6 +111,7 @@ namespace mcknaldi.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public ActionResult Edit([Bind(Include = "Id,Title,Description,Content,ImagePath,CreatedAt")] Article article)
         {
             if (ModelState.IsValid)
@@ -93,6 +125,7 @@ namespace mcknaldi.Areas.Admin.Controllers
         }
 
         // GET: Admin/Articles/Delete/5
+        [Authorize(Roles = "Admin")]
         public ActionResult Delete(int? id)
         {
             if (id == null)
