@@ -39,14 +39,7 @@ namespace mcknaldi.Controllers
             return View();
         }
 
-        public ActionResult Products()
-        {
-            var products = db.Products;
-            return View(db.Products.ToList());
-
-        }
-
-        // GET: Admin/Product/Details/5
+        // GET: Products/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -60,5 +53,6 @@ namespace mcknaldi.Controllers
             }
             return View(product);
         }
+
     }
 }
