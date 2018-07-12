@@ -382,3 +382,6 @@ C:\Users\Glenn\Desktop\mcknaldi schoool\mcknaldi\mcknaldi\mcknaldi\obj\Debug\mck
 C:\Users\Glenn\Desktop\mcknaldi schoool\mcknaldi\mcknaldi\mcknaldi\obj\Debug\mcknaldi.Migrations.applicationuserchanges.resources
 C:\Users\Glenn\Desktop\mcknaldi schoool\mcknaldi\mcknaldi\mcknaldi\obj\Debug\mcknaldi.Migrations.changesmanageviewmodel.resources
 C:\Users\Glenn\Desktop\mcknaldi schoool\mcknaldi\mcknaldi\mcknaldi\obj\Debug\mcknaldi.Migrations.changebezorgadres.resources
+C:\Users\dvdbe\OneDrive\Documenten\Visual Studio 2017\Projects\McKnaldi\mcknaldi\mcknaldi\obj\Debug\mcknaldi.Migrations.applicationuserchanges.resources
+C:\Users\dvdbe\OneDrive\Documenten\Visual Studio 2017\Projects\McKnaldi\mcknaldi\mcknaldi\obj\Debug\mcknaldi.Migrations.changesmanageviewmodel.resources
+C:\Users\dvdbe\OneDrive\Documenten\Visual Studio 2017\Projects\McKnaldi\mcknaldi\mcknaldi\obj\Debug\mcknaldi.Migrations.changebezorgadres.resources
