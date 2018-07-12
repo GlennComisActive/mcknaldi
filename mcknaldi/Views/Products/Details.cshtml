@@ -1,98 +1,85 @@
 ﻿@model mcknaldi.Models.Product
 
 @{
-    ViewBag.Title = "Details";
+    Layout = null;
 }
+<!DOCTYPE html>
 
-<h2>Details</h2>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="~/Content/glennstyle.css">
+</head>
+<body>
+    <nav class="navbar sticky-top navbar-expand-lg navbar-dark" style="background-color: #B61C23;">
+        <a class="navbar-brand" href="#">Mcknaldi</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="#">Producten</a>
+                <a class="nav-item nav-link" href="#">Aanbiedingen</a>
+                <a class="nav-item nav-link" href="#">Winkelwagen</a>
+                <a class="nav-item nav-link" href="#">Bestellen</a>
 
-<div>
-    <h4>Product</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Category.Name)
-        </dt>
+            </div>
+        </div>
+    </nav>
+    <div class="navbar navbar-expand-lg navbar-light " style="border: 1px solid #585858;">
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-danger" type="submit">Search</button>
+        </form>
+    </div>
+    <div class="cage-banner">
+        <img src="https://www.placecage.com/2000/1000" />
+    </div>
+  
+    <div class="detail-wrapper">
+        <img class="product-img" src="@Html.DisplayFor(modelItem => Model.Image)" />
+        <div class="detail-container">
+            <p class="detail-title">@Html.DisplayFor(model => model.Title)</p>
+            <p><span class="euro-span">€</span> @Html.DisplayFor(model => model.Price)</p>
+            <p>@Html.DisplayFor(model => model.ShortDescription)</p>
+        </div>
+        <a href="#">
+            <p>In winkelmandje!</p>
+        </a>
+    </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.Category.Name)
-        </dd>
+    <div class="big-desc">
+        <p>@Html.DisplayFor(model => model.FullDescription)</p>
+    </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.ApiId)
-        </dt>
+    <div class="cat-footer">
+        <div>
+            <img src="https://www.placecage.com/300/150" />
+            <h5>Socialmedia</h5>
+        </div>
+        <div>
+            <img src="https://www.placecage.com/300/150" />
+            <h5>Briefaanmelding</h5>
+        </div>
+        <div>
+            <img src="https://www.placecage.com/300/150" />
+            <h5>Klantenservice</h5>
+        </div>
+    </div>
+    <div class="cat-terms">
+        <p>Algemene voorwaarde</p>
+        <p>Levering en verzending</p>
+        <p>Privacy beleid</p>
+        <p>Onze organisatie</p>
+    </div>
+</body>
+<foot>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
+</foot>
+</html>
 
-        <dd>
-            @Html.DisplayFor(model => model.ApiId)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.EAN)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.EAN)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Title)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Title)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Brand)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Brand)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ShortDescription)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ShortDescription)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.FullDescription)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.FullDescription)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Image)
-        </dt>
-
-        <dd>
-            <img src="@Html.DisplayFor(modelItem => Model.Image)" style="max-width:100px;" />
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Weight)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Weight)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Price)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Price)
-        </dd>
-
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) 
-    @Html.ActionLink("Back to List", "Index")
-</p>

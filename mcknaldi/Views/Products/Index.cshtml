@@ -1,72 +1,89 @@
 ﻿@model IEnumerable<mcknaldi.Models.Product>
 
 @{
-    ViewBag.Title = "Index";
+    Layout = null;
 }
 
+<!DOCTYPE html>
+
+<html>
 <head>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="~/Content/glennstyle.css">
 </head>
-
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
-<style>
-    .card-columns {
-    column-count: 4;
-  
-}
-</style>
 <body>
-
-
-
-    @foreach (var item in Model)
-    {
-        /*<div class="w3-container">
-
-            <div class="w3-card-4 w3-dark-grey" style="width:25%">
-
-                <div class="w3-container w3-center">
-                    <h3>@Html.DisplayFor(modelItem => item.Title)</h3>
-                    <img src="@Html.DisplayFor(modelItem => item.Image)" style="width:100%;" />
-                    <h5>@Html.DisplayFor(modelItem => item.ShortDescription)</h5>
-
-                    <div class="w3-section">
-                        @Html.ActionLink("Details", "Details", new { id = item.Id })
-                        <button class="w3-button w3-green">Details </button>
-                        <button class="w3-button w3-red">Decline</button>
-                    </div>
-                </div>
-
-            </div>
-        </div>*/
-
-        /*<div class="card-columns">
-            <div class="card">
-                <img class="card-img-top" src=".../100px160/" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">Card title that wraps to a new line</h5>
-                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                </div>
-            </div>
-        </div>*/
-
-        <div class="card-deck">
-            <div class="card">
-                <img class="card-img-top" src="@Html.DisplayFor(modelItem => item.Image)" style="width:25%;" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">@Html.DisplayFor(modelItem => item.Title)</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                </div>
-                <div class="card-footer" href ="@Html.ActionLink("Details", "Details", new { id = item.Id })">
-                    <button type="button" class="btn btn-outline-success">Details </button>
-                </div>
+    <nav class="navbar sticky-top navbar-expand-lg navbar-dark" style="background-color: #B61C23;">
+        <a class="navbar-brand" href="#">Mcknaldi</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="#">Producten</a>
+                <a class="nav-item nav-link" href="#">Aanbiedingen</a>
+                <a class="nav-item nav-link" href="#">Winkelwagen</a>
+                <a class="nav-item nav-link" href="#">Bestellen</a>
             </div>
         </div>
-    }
+    </nav>
+    <div class="navbar navbar-expand-lg navbar-light " style="border: 1px solid #585858;">
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-danger" type="submit">Search</button>
+        </form>
+    </div>
+
+    <div class="cage-banner">
+        <img src="https://www.placecage.com/2000/1000" />
+    </div>
+
+    <div class="prod-wrapper">
+        @foreach (var item in Model)
+        {
+                <div class="product-card">
+                    <div class="prod-img-container">
+                        <img class="card-img-top" src="@Html.DisplayFor(modelItem => item.Image)" style="width:25%;" alt="Card image cap">
+                        @Html.DisplayFor(modelItem => item.Price)
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">@Html.DisplayFor(modelItem => item.Title)</h5>
+                       @Html.DisplayFor(modelItem => item.ShortDescription)
+                    </div>
+                </div>
+        }
+    </div>
+
+    <div class="prod-footer">
+        <div>
+            <img src="https://www.placecage.com/300/150" />
+            <h5>Socialmedia</h5>
+        </div>
+        <div>
+            <img src="https://www.placecage.com/300/150" />
+            <h5>Briefaanmelding</h5>
+        </div>
+        <div>
+            <img src="https://www.placecage.com/300/150" />
+            <h5>Klantenservice</h5>
+        </div>
+    </div>
+    <div class="prod-terms">
+        <p>Algemene voorwaarde</p>
+        <p>Levering en verzending</p>
+        <p>Privacy beleid</p>
+        <p>Onze organisatie</p>
+    </div>
 </body>
+<foot>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
+</foot>
+</html>
+
 
 
 

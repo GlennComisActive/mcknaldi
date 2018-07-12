@@ -256,6 +256,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap1.css" />
     <Content Include="Content\bootstrap2.min.css" />
+    <Content Include="Content\glennstyle.css" />
     <Content Include="Content\Test.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
