@@ -410,6 +410,7 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Uploads\Content\edit-icon.png" />
+    <Content Include="Uploads\Content\Niewsberichten.png" />
     <Content Include="vendor\bootstrap\css\bootstrap.css" />
     <Content Include="vendor\bootstrap\css\bootstrap.min.css" />
     <Content Include="vendor\bootstrap\js\bootstrap.bundle.js" />

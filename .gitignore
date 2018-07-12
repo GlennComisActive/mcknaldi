@@ -2,3 +2,14 @@
 .git
 packages
 .vs
+mcknaldi/bin/roslyn/Microsoft.CodeAnalysis.CSharp.dll
+mcknaldi/bin/roslyn/Microsoft.CodeAnalysis.dll
+mcknaldi/bin/roslyn/Microsoft.CodeAnalysis.VisualBasic.dll
+mcknaldi/bin/roslyn/Microsoft.DiaSymReader.Native.amd64.dll
+mcknaldi/bin/roslyn/System.Collections.Immutable.dll
+mcknaldi/bin/roslyn/System.Diagnostics.FileVersionInfo.dll
+mcknaldi/bin/roslyn/System.IO.FileSystem.dll
+mcknaldi/bin/roslyn/System.IO.FileSystem.Primitives.dll
+mcknaldi/bin/roslyn/System.Reflection.Metadata.dll
+mcknaldi/bin/roslyn/System.Security.Cryptography.Primitives.dll
+mcknaldi/bin/roslyn/VBCSCompiler.exe
