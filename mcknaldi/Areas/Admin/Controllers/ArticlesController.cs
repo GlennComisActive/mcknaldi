@@ -58,7 +58,7 @@ namespace mcknaldi.Areas.Admin.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize(Roles = "Admin")]
-        public ActionResult Create([Bind(Include = "Id,Title,Description,Content,ImageUpload,ImagePath")] Article article, HttpPostedFileBase ImageUpload)
+        public ActionResult Create([Bind(Include = "Id,Title,Description,Content,ImagePath,ImageUpload")] Article article, HttpPostedFileBase ImageUpload)
         {
             if (ModelState.IsValid)
             {
@@ -68,8 +68,7 @@ namespace mcknaldi.Areas.Admin.Controllers
                 if (ImageUpload != null && ImageUpload.ContentLength > 0)
                 {
                     // directory aanmaken
-                    var uploadPath = Path.Combine(Server.MapPath("~/Uploads/Content"),
-                    article.Id.ToString());
+                    var uploadPath = Path.Combine(Server.MapPath("~/Uploads/Content"), article.Id.ToString());
                     Directory.CreateDirectory(uploadPath);
                     // TODO: oude afbeelding verwijderen
                     // bestandsnaam maken, op basis van een random string (GUID)
@@ -81,9 +80,8 @@ namespace mcknaldi.Areas.Admin.Controllers
                     // opslaan in database
                     article.ImagePath = newFilename;
                     db.SaveChanges();
-                    return RedirectToAction("Index");
                 }
-               
+                return RedirectToAction("Index");
             }
             return View(article);
         }
@@ -112,13 +110,29 @@ namespace mcknaldi.Areas.Admin.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize(Roles = "Admin")]
-        public ActionResult Edit([Bind(Include = "Id,Title,Description,Content,ImagePath,CreatedAt")] Article article)
+        public ActionResult Edit([Bind(Include = "Id,Title,Description,Content,ImagePath,ImageUpload,CreatedAt")] Article article, HttpPostedFileBase ImageUpload)
         {
             if (ModelState.IsValid)
             {
                 article.UpdatedAt = DateTime.Now;
                 db.Entry(article).State = EntityState.Modified;
                 db.SaveChanges();
+                if (ImageUpload != null && ImageUpload.ContentLength > 0)
+                {
+                    // directory aanmaken
+                    var uploadPath = Path.Combine(Server.MapPath("~/Uploads/Content"), article.Id.ToString());
+                    Directory.CreateDirectory(uploadPath);
+                    // TODO: oude afbeelding verwijderen
+                    // bestandsnaam maken, op basis van een random string (GUID)
+                    string fileGuid = Guid.NewGuid().ToString();
+                    string extension = Path.GetExtension(ImageUpload.FileName);
+                    string newFilename = fileGuid + extension;
+                    // bestand opslaan
+                    ImageUpload.SaveAs(Path.Combine(uploadPath, newFilename));
+                    // opslaan in database
+                    article.ImagePath = newFilename;
+                    db.SaveChanges();
+                }
                 return RedirectToAction("Index");
             }
             return View(article);

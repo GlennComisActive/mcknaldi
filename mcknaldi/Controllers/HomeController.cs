@@ -11,19 +11,13 @@ namespace mcknaldi.Controllers
     public class HomeController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
-        public ActionResult Index(string searchString)
+        public ActionResult Index()
         {
-            var products = from p in db.Products
-                           select p;
             HomePageViewModel HPVM = new HomePageViewModel();
             HPVM.Products = db.Products.ToList();
             HPVM.Promotions = db.Promotions.ToList();
             HPVM.Articles = db.Articles.ToList();
 
-            if (!String.IsNullOrEmpty(searchString))
-            {
-                products = products.Where(p => p.Title.Contains(searchString));
-            }
             return View(HPVM);
         }
 

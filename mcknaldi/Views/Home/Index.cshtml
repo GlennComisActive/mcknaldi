@@ -52,7 +52,7 @@
         </div>
     </div>
 
-    <div class="content-wrapper">
+    <!--<div class="content-wrapper">
         @foreach (var item in Model.Products)
         {
             foreach (var item1 in Model.Promotions)
@@ -61,32 +61,56 @@
                 {
                     <div class="Content-container">
                         <p> @Html.DisplayFor(modelItem => item.Title)</p>
-
-                        <img src="@Html.DisplayFor(modelItem => item.Image)" style="max-width:100px;" />
+                        <div class="home-img-cnt">
+                            <img src="@Html.DisplayFor(modelItem => item.Image)" style="max-width:100px;" />
+                        </div>
 
                         <p>@Html.DisplayFor(modelItem => item.ShortDescription) </p>
 
                         <p> @Html.DisplayFor(modelItem => item.Price) </p>
 
-                        @Html.ActionLink("Bekijk Product", "Details", "Products", new { @class = "alert-link", id = item.Id })
                     </div>
-
-                    }
 
                 }
 
             }
-    </div>
+
+        }
+    </div> -->
     @foreach (var item in Model.Articles)
     {
-        @Html.DisplayFor(modelItem => item.Title)
-        @Html.DisplayFor(modelItem => item.Description)
-        @Html.DisplayFor(modelItem => item.ImagePath)
-    }
-    <div class="cage-banner">
-        <img src="https://www.placecage.com/2000/1000" />
-    </div>
+        
+        
+        
 
+        <div class="art-wrapper">
+            <div class="art-cnt">
+                <h2>@Html.DisplayFor(modelItem => item.Title)</h2>
+                <p>@Html.DisplayFor(modelItem => item.Description)</p>
+                <img src="~/Uploads/Content/@Html.DisplayFor(modelItem => item.Id)/@Html.DisplayFor(modelItem => item.ImagePath)" style="max-width:25rem;height:15rem;max-height:15rem;"></img>
+            </div>
+        </div>
+    }
+    <div class="prod-footer">
+        <div>
+            <a href="https://www.facebook.com"><img src="http://placehold.it/300x150" /></a>
+            <h5>Socialmedia</h5>
+        </div>
+        <div>
+            <img src="http://placehold.it/300x150" />
+            <h5>Briefaanmelding</h5>
+        </div>
+        <div>
+            <img src="http://placehold.it/300x150" />
+            <h5>Klantenservice</h5>
+        </div>
+    </div>
+    <div class="prod-terms">
+        <p>Algemene voorwaarde</p>
+        <p>Levering en verzending</p>
+        <p>Privacy beleid</p>
+        <p>Onze organisatie</p>
+    </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
