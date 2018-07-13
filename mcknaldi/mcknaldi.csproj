@@ -208,6 +208,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
+    <Compile Include="Controllers\PromotionsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -530,6 +531,11 @@
     <Content Include="Views\Categories\Index.cshtml" />
     <Content Include="Views\Home\Products.cshtml" />
     <Content Include="Views\Shared\_LoginPartialWeb.cshtml" />
+    <Content Include="Views\Promotions\Create.cshtml" />
+    <Content Include="Views\Promotions\Delete.cshtml" />
+    <Content Include="Views\Promotions\Details.cshtml" />
+    <Content Include="Views\Promotions\Edit.cshtml" />
+    <Content Include="Views\Promotions\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

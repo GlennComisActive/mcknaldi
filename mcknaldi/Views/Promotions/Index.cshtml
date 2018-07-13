@@ -1,0 +1,74 @@
+﻿@model IEnumerable<mcknaldi.Models.Promotion>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="~/Content/glennstyle.css">
+</head>
+<body>
+    <nav class="navbar sticky-top navbar-expand-lg navbar-dark" style="background-color: #B61C23;">
+        <a class="navbar-brand" href="~/Home/Index">Mcknaldi</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link" href="~/Home/Index">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="/Products/Index">Producten</a>
+                <a class="nav-item nav-link" href="/Promotions/Index">Aanbiedingen</a>
+                <a class="nav-item nav-link" href="#">Winkelwagen</a>
+                <a class="nav-item nav-link" href="#">Bestellen</a>
+
+                @Html.Partial("_LoginPartialWeb")
+            </div>
+        </div>
+
+    </nav>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DiscountPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ValidUntil)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductEAN)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DiscountPrice)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ValidUntil)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProductEAN)
+                </td>
+                <td>
+                    @Html.ActionLink("Details", "Details", new { id = item.Id }) 
+            </tr>
+        }
+
+    </table>
+</body>
+</html>

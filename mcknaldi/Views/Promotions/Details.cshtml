@@ -1,0 +1,78 @@
+﻿@model mcknaldi.Models.Promotion
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="~/Content/glennstyle.css">
+</head>
+<body>
+    <nav class="navbar sticky-top navbar-expand-lg navbar-dark" style="background-color: #B61C23;">
+        <a class="navbar-brand" href="~/Home/Index">Mcknaldi</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link" href="~/Home/Index">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="/Products/Index">Producten</a>
+                <a class="nav-item nav-link" href="/Promotions/Index">Aanbiedingen</a>
+                <a class="nav-item nav-link" href="#">Winkelwagen</a>
+                <a class="nav-item nav-link" href="#">Bestellen</a>
+
+                @Html.Partial("_LoginPartialWeb")
+            </div>
+        </div>
+
+    </nav>
+    <div>
+        <h4>Promotion</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Title)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Title)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.DiscountPrice)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.DiscountPrice)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.ValidUntil)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ValidUntil)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.ProductEAN)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ProductEAN)
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

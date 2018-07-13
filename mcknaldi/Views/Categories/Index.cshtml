@@ -15,21 +15,23 @@
 </head>
 <body>
     <nav class="navbar sticky-top navbar-expand-lg navbar-dark" style="background-color: #B61C23;">
-        <a class="navbar-brand" href="#">Mcknaldi</a>
+        <a class="navbar-brand" href="~/Home/Index">Mcknaldi</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                <a class="nav-item nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                <a class="nav-item nav-link" href="#">Producten</a>
-                <a class="nav-item nav-link" href="#">Aanbiedingen</a>
+                <a class="nav-item nav-link" href="~/Home/Index">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="/Products/Index">Producten</a>
+                <a class="nav-item nav-link" href="/Promotions/Index">Aanbiedingen</a>
                 <a class="nav-item nav-link" href="#">Winkelwagen</a>
                 <a class="nav-item nav-link" href="#">Bestellen</a>
 
+                @Html.Partial("_LoginPartialWeb")
             </div>
         </div>
-      </nav>
+
+    </nav>
     <div class="navbar navbar-expand-lg navbar-light " style="border: 1px solid #585858;">
         <form class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -43,7 +45,7 @@
             {
 
                 <div class="cat-container">
-                    <img src="https://www.placecage.com/gif/200/200" />
+                    <img src="@Html.DisplayFor(modelItem => item.Image)" />
                     <p>@Html.DisplayFor(modelItem => item.Name)</p>
                 </div>
 

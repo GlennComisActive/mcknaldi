@@ -1,42 +1,27 @@
 ﻿.cat-container {
     width: 20%;
-<<<<<<< HEAD
-    background-color: #585858;
-=======
     background-color: #EFEFEF;
->>>>>>> f3c96353f7468996a91644d1c0eed5e7d17e1a9b
     display: flex;
     flex-direction: column;
     align-content: center;
     justify-content: center;
     border: 1px solid #CED4DA;
 }
-<<<<<<< HEAD
 
     .cat-container p {
-        color: white;
-=======
-    .cat-container p {
         color: #B61C23;
->>>>>>> f3c96353f7468996a91644d1c0eed5e7d17e1a9b
         text-align: center;
         position: relative;
         font-family: Arial;
         padding-bottom: 0.2rem;
-<<<<<<< HEAD
+        font-weight: bold;
     }
 
     .cat-container img {
-=======
-        font-weight: bold;
-    }
-    .cat-container img{
->>>>>>> f3c96353f7468996a91644d1c0eed5e7d17e1a9b
         max-width: 60%;
         padding-top: 1rem;
         margin-left: 20%;
     }
-<<<<<<< HEAD
 
 .cat-wrapper {
     display: flex;
@@ -45,57 +30,37 @@
     flex-wrap: wrap;
 }
 
-.content-wrapper {
-    display: flex;
-    max-width: 100%;
+.cat-footer {
     width: 100%;
-    flex-wrap: wrap;
-}
-.content-container {
-    width: 33.33%;
-    background-color: white;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid #CED4DA;
-
+    justify-content: space-around;
+    background-color: #B61C23;
+    height: 15rem;
+    position: absolute;
+    bottom: 3rem;
 }
 
-=======
-    .cat-wrapper {
-        display: flex;
-        max-width: 100%;
-        width: 100%;
-        flex-wrap: wrap;
-    }
-    .cat-footer {
-        width: 100%;
-        display: flex;
-        justify-content: space-around;
-        background-color: #B61C23;
-        height: 15rem;
-        position: absolute;
-        bottom: 3rem;
-    }
-    .cat-footer div h5{
+    .cat-footer div h5 {
         color: white;
         font-weight: bold;
         text-align: center;
         margin-top: 1rem;
     }
-    .cat-footer div{
+
+    .cat-footer div {
         margin-top: 2rem;
     }
-    .cat-terms {
-        width: 100%;
-        display: flex;
-        justify-content: space-around;
-        align-content: center;
-        position: absolute;
-        bottom: 0;
-    }
-    .cat-terms p{
+
+.cat-terms {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    position: absolute;
+    bottom: 0;
+}
+
+    .cat-terms p {
         margin-bottom: 0;
         padding-bottom: 1rem;
         font-weight: bold;
@@ -108,6 +73,7 @@
     background-color: #EFEFEF;
     border: 1px solid #CED4DA;
 }
+
 .prod-wrapper {
     display: flex;
     max-width: 100%;
@@ -115,15 +81,18 @@
     height: 100%;
     flex-wrap: wrap;
 }
-.prod-img-container{
+
+.prod-img-container {
     margin-top: 2rem;
     display: flex;
     justify-content: center;
 }
-.prod-img-container img{
-    width: 50px;
-    height: 50px;
-}
+
+    .prod-img-container img {
+        width: 50px;
+        height: 50px;
+    }
+
 .prod-footer {
     width: 100%;
     display: flex;
@@ -161,10 +130,12 @@
     width: 100%;
     height: 10rem;
 }
-.product-img{
+
+.product-img {
     width: 15rem;
     height: 15rem;
 }
+
 .detail-wrapper {
     width: 60%;
     margin-left: 20%;
@@ -173,29 +144,66 @@
     margin-bottom: 2rem;
     position: relative;
 }
-.detail-wrapper a{
-    margin-left: 10%;
-}
-.detail-container{
+
+    .detail-wrapper a {
+        margin-left: 10%;
+    }
+
+.detail-container {
     display: flex;
     flex-direction: column;
 }
-.big-desc{
+
+.big-desc {
     width: 100%;
     display: flex;
     justify-content: center;
     padding-top: 1rem;
     border-top: 1px solid black;
 }
-.big-desc p {
-    max-width: 60%;
-}
-.detail-title{
+
+    .big-desc p {
+        max-width: 60%;
+    }
+
+.detail-title {
     font-weight: bold;
     font-size: 1.3rem;
 }
-.euro-span{
+
+.euro-span {
     font-size: 1.2rem;
     font-weight: bold;
 }
->>>>>>> f3c96353f7468996a91644d1c0eed5e7d17e1a9b
+
+.Content-container {
+    width: 33.33%;
+    background-color: #EFEFEF;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    border: 1px solid #CED4DA;
+}
+.content-wrapper {
+    display: flex;
+    max-width: 100%;
+    width: 100%;
+    flex-wrap: wrap;
+
+}
+
+.Content-container p {
+    color: #B61C23;
+    text-align: center;
+    position: relative;
+    font-family: Arial;
+    padding-bottom: 0.2rem;
+    font-weight: bold;
+}
+
+.cat-container img {
+    max-width: 60%;
+    padding-top: 1rem;
+    margin-left: 20%;
+}
