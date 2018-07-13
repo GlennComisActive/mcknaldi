@@ -13,6 +13,8 @@ namespace mcknaldi.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
         public ActionResult Index(string searchString)
         {
+            var products = from p in db.Products
+                           select p;
             HomePageViewModel HPVM = new HomePageViewModel();
             HPVM.Products = db.Products.ToList();
             HPVM.Promotions = db.Promotions.ToList();
@@ -20,8 +22,7 @@ namespace mcknaldi.Controllers
 
             if (!String.IsNullOrEmpty(searchString))
             {
-                students = students.Where(s => s.LastName.Contains(searchString)
-                                       || s.FirstMidName.Contains(searchString));
+                products = products.Where(p => p.Title.Contains(searchString));
             }
             return View(HPVM);
         }

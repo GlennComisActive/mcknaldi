@@ -15,9 +15,13 @@ namespace mcknaldi.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Products
-        public ActionResult Index()
+        public ActionResult Index(string Searchstring)
         {
             var products = db.Products.Include(p => p.Category);
+            if (!String.IsNullOrEmpty(Searchstring))
+            { 
+                products = products.Where(p => p.Title.Contains(Searchstring));
+            }
             return View(products.ToList());
         }
 
