@@ -1,7 +1,6 @@
 ﻿@model IEnumerable<mcknaldi.Models.Promotion>
 
 @{
-    ViewBag.Title = "Index";
     Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
 }
 
@@ -21,7 +20,6 @@
         <th>
             @Html.DisplayNameFor(model => model.ProductEAN)
         </th>
-        <th></th>
     </tr>
 
 @foreach (var item in Model) {
@@ -37,9 +35,6 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.ProductEAN)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id })
         </td>
     </tr>
 }

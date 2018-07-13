@@ -70,7 +70,6 @@ C:\Users\Jens Schilder\Documents\Source tree\MCKnaldi\mcknaldi\obj\Debug\mcknald
 C:\Users\Jens Schilder\Documents\Source tree\MCKnaldi\mcknaldi\obj\Debug\mcknaldi.csproj.CopyComplete
 C:\Users\Jens Schilder\Documents\Source tree\MCKnaldi\mcknaldi\obj\Debug\mcknaldi.dll
 C:\Users\Jens Schilder\Documents\Source tree\MCKnaldi\mcknaldi\obj\Debug\mcknaldi.pdb
-C:\Users\Jens Schilder\Documents\Source tree\MCKnaldi\mcknaldi\obj\Debug\mcknaldi.Migrations.Article1.resources
 C:\Users\Jens Schilder\Documents\Source tree\MCKnaldi\mcknaldi\obj\Debug\mcknaldi.csproj.GenerateResource.cache
 C:\Users\Jens Schilder\Source\Repos\mcknaldi\mcknaldi\bin\ApplicationInsights.config
 C:\Users\Jens Schilder\Source\Repos\mcknaldi\mcknaldi\bin\mcknaldi.dll.config
@@ -385,3 +384,12 @@ C:\Users\Glenn\Desktop\mcknaldi schoool\mcknaldi\mcknaldi\mcknaldi\obj\Debug\mck
 C:\Users\dvdbe\OneDrive\Documenten\Visual Studio 2017\Projects\McKnaldi\mcknaldi\mcknaldi\obj\Debug\mcknaldi.Migrations.applicationuserchanges.resources
 C:\Users\dvdbe\OneDrive\Documenten\Visual Studio 2017\Projects\McKnaldi\mcknaldi\mcknaldi\obj\Debug\mcknaldi.Migrations.changesmanageviewmodel.resources
 C:\Users\dvdbe\OneDrive\Documenten\Visual Studio 2017\Projects\McKnaldi\mcknaldi\mcknaldi\obj\Debug\mcknaldi.Migrations.changebezorgadres.resources
+C:\Users\Jens Schilder\Documents\Source tree\mcknaldi\mcknaldi\bin\FroalaEditorSDK.dll
+C:\Users\Jens Schilder\Documents\Source tree\mcknaldi\mcknaldi\bin\Magick.NET-Q16-AnyCPU.dll
+C:\Users\Jens Schilder\Documents\Source tree\mcknaldi\mcknaldi\bin\Magick.NET-Q16-AnyCPU.xml
+C:\Users\Jens Schilder\Documents\Source tree\mcknaldi\mcknaldi\obj\Debug\mcknaldi.Migrations.First.resources
+C:\Users\Jens Schilder\Documents\Source tree\mcknaldi\mcknaldi\obj\Debug\mcknaldi.Migrations.promotion.resources
+C:\Users\Jens Schilder\Documents\Source tree\mcknaldi\mcknaldi\obj\Debug\mcknaldi.Migrations.modelupdate.resources
+C:\Users\Jens Schilder\Documents\Source tree\mcknaldi\mcknaldi\obj\Debug\mcknaldi.Migrations.applicationuserchanges.resources
+C:\Users\Jens Schilder\Documents\Source tree\mcknaldi\mcknaldi\obj\Debug\mcknaldi.Migrations.changesmanageviewmodel.resources
+C:\Users\Jens Schilder\Documents\Source tree\mcknaldi\mcknaldi\obj\Debug\mcknaldi.Migrations.changebezorgadres.resources

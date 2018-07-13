@@ -1,14 +1,13 @@
 ﻿@model mcknaldi.Models.Article
 
 @{
-    ViewBag.Title = "Delete";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h2>Delete</h2>
+<h2>Nieuwsbericht verwijderen</h2>
 
-<h3>Are you sure you want to delete this?</h3>
+<h3>Weet je zeker dat je dit nieuwsbericht wilt verwijderen?</h3>
 <div>
-    <h4>Article</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -65,8 +64,8 @@
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+            <input type="submit" value="Verwijder" class="btn btn-default" /> |
+            @Html.ActionLink("Terug naar overzicht", "Index")
         </div>
     }
 </div>
