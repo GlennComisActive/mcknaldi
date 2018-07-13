@@ -11,18 +11,12 @@ namespace mcknaldi.Controllers
     public class HomeController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
-        public ActionResult Index(string searchString)
+        public ActionResult Index()
         {
             HomePageViewModel HPVM = new HomePageViewModel();
             HPVM.Products = db.Products.ToList();
             HPVM.Promotions = db.Promotions.ToList();
             HPVM.Articles = db.Articles.ToList();
-
-            if (!String.IsNullOrEmpty(searchString))
-            {
-                students = students.Where(s => s.LastName.Contains(searchString)
-                                       || s.FirstMidName.Contains(searchString));
-            }
             return View(HPVM);
         }
 

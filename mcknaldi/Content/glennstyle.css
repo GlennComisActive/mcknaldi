@@ -207,3 +207,25 @@
     padding-top: 1rem;
     margin-left: 20%;
 }
+.login-container{
+    display: flex;
+    justify-content: center;
+    width: 75rem;
+    margin-left: 10%;
+    margin-top: 2rem;
+}
+.reg-container {
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 2rem;
+}
+.form-cont-reg{
+    width: 50%;
+}
+.ai-container{
+    margin-top: 2rem;
+    width: 60%;
+    margin-left:20%
+}
