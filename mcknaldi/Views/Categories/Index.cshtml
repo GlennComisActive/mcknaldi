@@ -22,7 +22,7 @@
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
                 <a class="nav-item nav-link" href="~/Home/Index">Home <span class="sr-only">(current)</span></a>
-                <a class="nav-item nav-link" href="/Products/Index">Producten</a>
+                <a class="nav-item nav-link" href="/Categories/Index">Producten</a>
                 <a class="nav-item nav-link" href="/Promotions/Index">Aanbiedingen</a>
                 <a class="nav-item nav-link" href="#">Winkelwagen</a>
                 <a class="nav-item nav-link" href="#">Bestellen</a>
@@ -44,10 +44,12 @@
             if (item.ParentId == null)
             {
 
-                <div class="cat-container">
-                    <img src="@Html.DisplayFor(modelItem => item.Image)" />
-                    <p>@Html.DisplayFor(modelItem => item.Name)</p>
-                </div>
+                
+                    <div class="cat-container">
+                        <a href="@Url.Action("Index", "Products", new { id = item.Id })"><img src="~/Uploads/Content/@item.Id/@item.Image" /></a>
+                        <a href="@Url.Action("Index", "Products", new { id = item.Id })"><p>@Html.DisplayFor(modelItem => item.Name)</p></a>
+                    </div>
+                
 
             }
 

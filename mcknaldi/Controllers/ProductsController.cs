@@ -13,21 +13,29 @@ namespace mcknaldi.Controllers
     public class ProductsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
+        ProductPageViewModel PPVM = new ProductPageViewModel();
 
         // GET: Products
-        public ActionResult Index(string Searchstring)
+        public ActionResult Index(string Searchstring, int id)
         {
-            var products = db.Products.Include(p => p.Category);
+
+            PPVM.Products = db.Products.ToList();
+            PPVM.Categories = db.Categories.ToList();
+            ViewBag.CurrentCatId = id;
+            var products = db.Products.Include(p => p.Category);            
             if (!String.IsNullOrEmpty(Searchstring))
             { 
                 products = products.Where(p => p.Title.Contains(Searchstring));
             }
-            return View(products.ToList());
+            return View(PPVM);
         }
 
         // GET: Products/Details/5
         public ActionResult Details(int? id)
         {
+            PPVM.Products = db.Products.ToList();
+            PPVM.Categories = db.Categories.ToList();
+            ViewBag.CurrentProductId = id;
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -37,7 +45,7 @@ namespace mcknaldi.Controllers
             {
                 return HttpNotFound();
             }
-            return View(product);
+            return View(PPVM);
         }
 
         // GET: Products/Create

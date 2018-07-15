@@ -1,4 +1,4 @@
-﻿@model IEnumerable<mcknaldi.Models.Product>
+﻿@model mcknaldi.Models.ProductPageViewModel
 
 @{
     Layout = null;
@@ -22,7 +22,7 @@
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
                 <a class="nav-item nav-link" href="~/Home/Index">Home <span class="sr-only">(current)</span></a>
-                <a class="nav-item nav-link" href="/Products/Index">Producten</a>
+                <a class="nav-item nav-link" href="/Categories/Index">Producten</a>
                 <a class="nav-item nav-link" href="/Promotions/Index">Aanbiedingen</a>
                 <a class="nav-item nav-link" href="#">Winkelwagen</a>
                 <a class="nav-item nav-link" href="#">Bestellen</a>
@@ -44,26 +44,100 @@
             }
 
             <div class="cage-banner">
-                <img src="https://www.placecage.com/2000/1000" />
+                @foreach(var banner in Model.Categories)
+                {
+                    if(banner.Id == ViewBag.CurrentCatId)
+                    {
+                        <img src="~/Uploads/Content/@banner.Id/@banner.Image" />
+                    }
+                }
+                
             </div>
 
             <div class="prod-wrapper">
-                @foreach (var item in Model)
+    @foreach (var item in Model.Categories)
+    {
+        if (item.Id == ViewBag.CurrentCatId)
+        {
+            if (item.ParentId == null)
+            {
+                foreach (var item1 in Model.Categories)
                 {
-                    <div class="product-card">
-                        <div class="prod-img-container">
-                            <img class="card-img-top" src="@Html.DisplayFor(modelItem => item.Image)" style="width:25%;" alt="Card image cap">
-                            @Html.DisplayFor(modelItem => item.Price)
-                        </div>  
-                        <div class="card-body">
-                            <h5 class="card-title">@Html.DisplayFor(modelItem => item.Title)</h5>
-                            @Html.DisplayFor(modelItem => item.ShortDescription)
-                            <p>@Html.ActionLink("Details", "Details", new { id = item.Id })</p>
+                    if (item1.ParentId == item.Id)
+                    {
+                        <div class="row">
+                        <div class="product-card">
+                            <div class="card-body">
+                                <a href="@Url.Action("Index", "Products", new { id = item1.Id })"><h5 class="card-title">@Html.DisplayFor(modelItem => item1.Name)</h5></a>
+                            </div>
                         </div>
-                    </div>
 
+                    @foreach (var item2 in Model.Categories)
+                    {
+                        if (item2.ParentId == item1.Id)
+                        {
+                            foreach (var item3 in Model.Products)
+                            {
+                                if (item3.CategoryId == item2.Id)
+                                {
+                                    <div class="product-card">
+                                        <div class="prod-img-container">
+                                            <img class="card-img-top" src="@Html.DisplayFor(modelItem => item3.Image)" style="width:25%;" alt="Card image cap">
+                                            @Html.DisplayFor(modelItem => item3.Price)
+                                        </div>
+                                        <div class="card-body">
+                                            <h5 class="card-title">@Html.DisplayFor(modelItem => item3.Title)</h5>
+                                            @Html.DisplayFor(modelItem => item3.ShortDescription)
+                                            <p>@Html.ActionLink("Details", "Details", new { id = item3.Id })</p>
+                                        </div>
+                                    </div>
+                                    }
 
+                                }
+                            }
+                        }
+                        </div>
+                    }
                 }
+            }
+            else
+            {
+                foreach (var item1 in Model.Categories)
+                {
+                    if (item1.ParentId == item.Id)
+                    {
+                        <div class="row">
+                        <div class="product-card">
+                            <div class="card-body">
+                                <h5>@Html.DisplayFor(modelItem => item1.Name)</h5>
+                            </div>
+                        </div>
+
+                    @foreach (var item2 in Model.Products)
+                    {
+                        if (item2.CategoryId == item1.Id)
+                        {
+                                    <div class="product-card">
+                                        <div class="prod-img-container">
+                                            <img class="card-img-top" src="@Html.DisplayFor(modelItem => item2.Image)" style="width:25%;" alt="Card image cap">
+                                            @Html.DisplayFor(modelItem => item2.Price)
+                                        </div>
+                                        <div class="card-body">
+                                            <h5 class="card-title">@Html.DisplayFor(modelItem => item2.Title)</h5>
+                                            @Html.DisplayFor(modelItem => item2.ShortDescription)
+                                            <p>@Html.ActionLink("Details", "Details", new { id = item2.Id })</p>
+                                        </div>
+                                    </div>
+                               
+                            }
+                        }
+                        </div>
+                    }
+                }
+            }
+
+        }
+    }
             </div>
 
             <div class="prod-footer">

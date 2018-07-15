@@ -1,4 +1,4 @@
-﻿@model mcknaldi.Models.Product
+﻿@model mcknaldi.Models.ProductPageViewModel
 
 @{
     Layout = null;
@@ -21,7 +21,7 @@
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
                 <a class="nav-item nav-link" href="~/Home/Index">Home <span class="sr-only">(current)</span></a>
-                <a class="nav-item nav-link" href="/Products/Index">Producten</a>
+                <a class="nav-item nav-link" href="/Categories/Index">Producten</a>
                 <a class="nav-item nav-link" href="/Promotions/Index">Aanbiedingen</a>
                 <a class="nav-item nav-link" href="#">Winkelwagen</a>
                 <a class="nav-item nav-link" href="#">Bestellen</a>
@@ -37,26 +37,39 @@
             <button class="btn btn-outline-danger" type="submit">Search</button>
         </form>
     </div>
-    <div class="cage-banner">
-        <img src="http://placehold.it/2000x1000" />
-    </div>
+    @foreach (var item in Model.Products)
+    {
+        if (item.Id == ViewBag.CurrentProductId)
+        {
+            foreach(var banner in Model.Categories)
+            {
+                if(banner.Id == item.CategoryId)
+                {
+                    <div class="cage-banner">
+                        <img src="~/Uploads/Content/@banner.Id/@banner.Image" />
+                    </div>
+                }
+            }
+            <div class="detail-wrapper">
+                <img class="product-img" src="@item.Image" />
+                <div class="detail-container">
+                    <p class="detail-title">@item.Title</p>
+                    <p><span class="euro-span">€</span> @item.Price</p>
+                    <p>@item.ShortDescription</p>
+                    <p>@Html.ActionLink("Terug naar overzicht", "Index", "Categories")</p>
+                </div>
+                @Html.ActionLink("In Winkelwagen", "OrderNow", "Cart", new { id = item.Id }, null)
 
-    <div class="detail-wrapper">
-        <img class="product-img" src="@Html.DisplayFor(modelItem => Model.Image)" />
-        <div class="detail-container">
-            <p class="detail-title">@Html.DisplayFor(model => model.Title)</p>
-            <p><span class="euro-span">€</span> @Html.DisplayFor(model => model.Price)</p>
-            <p>@Html.DisplayFor(model => model.ShortDescription)</p>
-            <p>    @Html.ActionLink("Back to List", "Index")</p>
-        </div>
-        <a href="#">
-            <p>In winkelmandje!</p>
-        </a>
-    </div>
+            </div>
 
-    <div class="big-desc">
-        <p>@Html.DisplayFor(model => model.FullDescription)</p>
-    </div>
+            <div class="big-desc">
+                <p>@item.FullDescription</p>
+            </div>
+        }
+    }
+
+
+
 
     <div class="cat-footer">
         <div>
@@ -86,4 +99,3 @@
 
 </foot>
 </html>
-
