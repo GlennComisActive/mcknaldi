@@ -58,7 +58,7 @@
                     <p>@item.ShortDescription</p>
                     <p>@Html.ActionLink("Terug naar overzicht", "Index", "Categories")</p>
                 </div>
-                @Html.ActionLink("In Winkelwagen", "OrderNow", "Cart", new { id = item.Id }, null)
+                @Html.ActionLink("In winkelwagen", "Add", "Cart", new { id = item.Id}, null)
 
             </div>
 

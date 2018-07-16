@@ -547,12 +547,12 @@
     <Content Include="Views\Promotions\Details.cshtml" />
     <Content Include="Views\Promotions\Edit.cshtml" />
     <Content Include="Views\Promotions\Index.cshtml" />
+    <Content Include="Views\Cart\ShopCart.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Uploads\Images\" />
-    <Folder Include="Views\Cart\" />
     <Folder Include="Views\FroalaApi\" />
     <Folder Include="Views\Test\" />
   </ItemGroup>

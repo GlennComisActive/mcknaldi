@@ -1,0 +1,17 @@
+﻿@model mcknaldi.Models.ShopCartModel
+@{
+    Layout = null;
+}
+
+@if (Model != null)
+{
+    foreach(var item in Model.Items)
+    {
+        decimal total = item.Amount * item.Product.Price;
+        @item.Product.Title
+        @item.Product.Image
+        @item.Product.Price
+        @item.Amount
+    }
+}
+

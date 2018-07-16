@@ -16,18 +16,34 @@ namespace mcknaldi.Controllers
             return View();
         }
 
-        public void Add(int id)
+
+
+        public ActionResult Add(int id)
         {
-            Cart cart = Session["Cart"] as Cart;
+            ShopCartModel cart = Session["Cart"] as ShopCartModel;
             if (cart == null || Session["Cart"] == null)
             {
-                cart = new Cart();
+                cart = new ShopCartModel();
                 Session["Cart"] = cart;
 
             }
             var itemproduct = db.Products.Where(p => p.Id == id).First();
             cart.Add(itemproduct);
-            return RedirectToAction("Index", "Products");
+            return RedirectToAction("Details", "Products", new {id = id});
         }
+
+        public ActionResult ShopCart()
+        {
+            if (Session["Cart"] == null)
+                return RedirectToAction("Index", "Categories");
+            ShopCartModel cart = Session["Cart"] as ShopCartModel;
+            return View(cart);
+        }
+
+        public ActionResult Delete(int id)
+        {
+            return View();
+        }
+        
     }
 }
