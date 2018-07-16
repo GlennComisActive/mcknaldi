@@ -23,7 +23,7 @@ namespace mcknaldi.Models
 
         [Required]
         [AllowHtml]
-        [Display(Name = "Content")]
+        [Display(Name = "Inhoud")]
         [DataType(DataType.MultilineText)]
         public string Content { get; set; }
 
