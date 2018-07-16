@@ -25,6 +25,12 @@ namespace mcknaldi.Models
         [Display(Name = "Totaal prijs")]
         public decimal TotalPrice { get; set; }
 
-        public Product Product { get; set; }
+        public Status Status { get; set; }
+    }
+    public enum Status
+    {
+        In_behandeling,
+        Afgekeurd,
+        afgerond
     }
 }

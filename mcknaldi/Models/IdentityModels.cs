@@ -46,7 +46,7 @@ namespace mcknaldi.Models
             return new ApplicationDbContext();
         }
 
-
-
+        object placeHolderVariable;
+        public System.Data.Entity.DbSet<mcknaldi.Models.Cart> Carts { get; set; }
     }
 }

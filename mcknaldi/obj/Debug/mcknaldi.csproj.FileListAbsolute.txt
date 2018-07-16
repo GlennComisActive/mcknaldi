@@ -393,3 +393,5 @@ C:\Users\Jens Schilder\Documents\Source tree\mcknaldi\mcknaldi\obj\Debug\mcknald
 C:\Users\Jens Schilder\Documents\Source tree\mcknaldi\mcknaldi\obj\Debug\mcknaldi.Migrations.applicationuserchanges.resources
 C:\Users\Jens Schilder\Documents\Source tree\mcknaldi\mcknaldi\obj\Debug\mcknaldi.Migrations.changesmanageviewmodel.resources
 C:\Users\Jens Schilder\Documents\Source tree\mcknaldi\mcknaldi\obj\Debug\mcknaldi.Migrations.changebezorgadres.resources
+C:\Users\dvdbe\OneDrive\Documenten\Visual Studio 2017\Projects\McKnaldi\mcknaldi\mcknaldi\obj\Debug\mcknaldi.Migrations.Order.resources
+C:\Users\dvdbe\OneDrive\Documenten\Visual Studio 2017\Projects\McKnaldi\mcknaldi\mcknaldi\obj\Debug\mcknaldi.Migrations.shop.resources
