@@ -261,6 +261,7 @@
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\ProductPageViewModel.cs" />
     <Compile Include="Models\Promotion.cs" />
+    <Compile Include="Models\ShopCartModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
