@@ -2,16 +2,138 @@
 @{
     Layout = null;
 }
+<!DOCTYPE html>
 
-@if (Model != null)
-{
-    foreach(var item in Model.Items)
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="~/Content/glennstyle.css">
+</head>
+<body>
+    <nav class="navbar sticky-top navbar-expand-lg navbar-dark" style="background-color: #B61C23;">
+        <a class="navbar-brand" href="~/Home/Index">Mcknaldi</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link" href="~/Home/Index">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="/Categories/Index">Producten</a>
+                <a class="nav-item nav-link" href="/Promotions/Index">Aanbiedingen</a>
+                <a class="nav-item nav-link" href="/Cart/ShopCart">Winkelwagen</a>
+                <a class="nav-item nav-link" href="#">Bestellen</a>
+
+                @Html.Partial("_LoginPartialWeb")
+            </div>
+        </div>
+    </nav>
+
+    <table>
+        <tr>
+            <th>
+                Product
+            </th>
+            <th>
+                Product afbeelding
+            </th>
+            <th>
+                Prijs
+            </th>
+            <th>
+                Hoeveelheid
+            </th>
+            <th>
+                Totaal prijs
+            </th>
+            <th></th>
+        </tr>
+        @if (Model != null)
     {
-        decimal total = item.Amount * item.Product.Price;
-        @item.Product.Title
-        @item.Product.Image
-        @item.Product.Price
-        @item.Amount
+        foreach (var item in Model.Items)
+        {
+            decimal total = item.Amount * item.Product.Price;
+            <tr>
+                <td>
+                    @item.Product.Title
+                </td>
+                <td>
+                    <img src="@item.Product.Image" style="max-width:100px;height:auto;" />
+                </td>
+                <td>
+                    @item.Product.Price
+                </td>
+                <td>
+                    @using (Html.BeginForm("Update", "Cart"))
+                {
+                    <input type="number" value="@item.Amount" name="Amount" id="Amount" />
+                    <input type="hidden" value="@item.Product.Id" name="ProductId" />
+                    <input type="image" src="" style="height:40px;width:40px;" />
+            }
+                </td>
+                <td>
+                    @total
+                </td>
+                <td><a href="@Url.Action("Delete", "Cart", new { id = item.Id } )">Verwijder</a></td>
+            </tr>
     }
 }
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>
+                @Model.CartTotal()
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>
+                <a href="@Url.Action("Checkout", "Cart")">Bestellingen plaatsen</a>
+            </td>
+        </tr>
+    </table>
+
+    
+
+
+
+
+    <div class="cat-footer">
+        <div>
+            <img src="http://placehold.it/300x150" />
+            <h5>Socialmedia</h5>
+        </div>
+        <div>
+            <img src="http://placehold.it/300x150" />
+            <h5>Briefaanmelding</h5>
+        </div>
+        <div>
+            <img src="http://placehold.it/300x150" />
+            <h5>Klantenservice</h5>
+        </div>
+    </div>
+    <div class="cat-terms">
+        <p>Algemene voorwaarde</p>
+        <p>Levering en verzending</p>
+        <p>Privacy beleid</p>
+        <p>Onze organisatie</p>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
+</body>
+<foot>
+
+</foot>
+</html>
+
+
+
+
 

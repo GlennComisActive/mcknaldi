@@ -10,7 +10,7 @@ namespace mcknaldi.Models
     {
         public int id { get; set; }
 
-        public Order OrderId { get; set; }
+        public string OrderCode { get; set; }
 
         [Display(Name = "Hoeveelheid")]
         public int Amount { get; set; }
@@ -20,6 +20,10 @@ namespace mcknaldi.Models
         [Display(Name = "ProductNaam")]
         public string ProductName { get; set; }
 
+        [Display(Name = "Prijs")]
+        public decimal Price { get; set; }
 
+        [Display(Name = "Totaalprijs")]
+        public decimal TotalPrice { get; set; }
     }
 }

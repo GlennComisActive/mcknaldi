@@ -13,8 +13,6 @@ namespace mcknaldi.Migrations
             DropIndex("dbo.Orders", new[] { "Product_Id" });
             AddColumn("dbo.Orders", "Status", c => c.Int(nullable: false));
             DropColumn("dbo.Orders", "Product_Id");
-            DropColumn("dbo.Products", "Amount");
-            DropTable("dbo.Carts");
         }
         
         public override void Down()

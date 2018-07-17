@@ -12,8 +12,12 @@ namespace mcknaldi.Models
         public ApplicationUser User { get; set; }
 
         [Required]
-        [Display(Name = "Producten")]
-        public string Products { get; set; }
+        [Display(Name = "Bestellings code")]
+        public string OrderCode { get; set; }
+
+        [Required]
+        [Display(Name = "Bestellings Naam")]
+        public string OrderName { get; set; }
 
         [Required]
         [Display(Name = "Datum")]

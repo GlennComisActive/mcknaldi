@@ -31,6 +31,7 @@ namespace mcknaldi.Models
         public DbSet<Promotion> Promotions { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<Order> Orders { get; set; }
+        public DbSet<OrderLijst> OrderLijsts { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Deliveryslots> Deliveryslots { get; set; }
         public DbSet<ApiCalls> ApiCalls { get; set; }

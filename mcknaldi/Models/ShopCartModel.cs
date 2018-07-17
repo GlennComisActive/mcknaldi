@@ -41,6 +41,29 @@ namespace mcknaldi.Models
             }
         }
 
+        public void Delete(int id)
+        {
+            items.RemoveAll(p => p.Product.Id == id);
+        }
 
+        public void Update(int id , int amount)
+        {
+            var item = items.Find(p => p.Product.Id == id);
+            if (item != null)
+                item.Amount = amount;
+        }
+
+        public int CartTotal()
+        {
+            int Totaal = 0;
+            var total = items.Sum(p => p.Product.Price * p.Amount);
+            if (total != null) Totaal = (int)total;
+            return Totaal;
+        }
+
+        public void Clear()
+        {
+            items.Clear();
+        }
     }
 }
