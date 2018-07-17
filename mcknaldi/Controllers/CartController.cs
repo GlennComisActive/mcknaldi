@@ -42,7 +42,10 @@ namespace mcknaldi.Controllers
 
         public ActionResult Delete(int id)
         {
-            return View();
+            ShopCartModel cart = Session["Cart"] as ShopCartModel;
+            cart.Remove(id);
+            return RedirectToAction("ShopCart", "Cart");
+
         }
         
     }

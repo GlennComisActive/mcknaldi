@@ -238,13 +238,9 @@
     <Compile Include="Migrations\201807121916235_change-bezorgadres.Designer.cs">
       <DependentUpon>201807121916235_change-bezorgadres.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201807151921390_Order.cs" />
-    <Compile Include="Migrations\201807151921390_Order.Designer.cs">
-      <DependentUpon>201807151921390_Order.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201807160743296_shop.cs" />
-    <Compile Include="Migrations\201807160743296_shop.Designer.cs">
-      <DependentUpon>201807160743296_shop.cs</DependentUpon>
+    <Compile Include="Migrations\201807161741495_Order.cs" />
+    <Compile Include="Migrations\201807161741495_Order.Designer.cs">
+      <DependentUpon>201807161741495_Order.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -548,6 +544,7 @@
     <Content Include="Views\Promotions\Edit.cshtml" />
     <Content Include="Views\Promotions\Index.cshtml" />
     <Content Include="Views\Cart\ShopCart.cshtml" />
+    <Content Include="Views\Cart\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -587,11 +584,8 @@
     <EmbeddedResource Include="Migrations\201807121916235_change-bezorgadres.resx">
       <DependentUpon>201807121916235_change-bezorgadres.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201807151921390_Order.resx">
-      <DependentUpon>201807151921390_Order.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201807160743296_shop.resx">
-      <DependentUpon>201807160743296_shop.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201807161741495_Order.resx">
+      <DependentUpon>201807161741495_Order.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

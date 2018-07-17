@@ -31,10 +31,13 @@ namespace mcknaldi.Models
         public DbSet<Promotion> Promotions { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<Order> Orders { get; set; }
+        public DbSet<OrderLijst> OrderLijsts { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Deliveryslots> Deliveryslots { get; set; }
         public DbSet<ApiCalls> ApiCalls { get; set; }
         public System.Data.Entity.DbSet<mcknaldi.Models.Article> Articles { get; set; }
+        object placeHolderVariable;
+        public System.Data.Entity.DbSet<mcknaldi.Models.Cart> Carts { get; set; }
 
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
@@ -46,7 +49,6 @@ namespace mcknaldi.Models
             return new ApplicationDbContext();
         }
 
-        object placeHolderVariable;
-        public System.Data.Entity.DbSet<mcknaldi.Models.Cart> Carts { get; set; }
+
     }
 }

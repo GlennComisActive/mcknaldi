@@ -1,0 +1,69 @@
+﻿@model mcknaldi.Models.ShopCartModel
+@{
+    Layout = null;
+}
+
+
+@if (Model != null)
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Product Naam</th>
+                <th>Product Plaatje</th>
+                <th>Prijs</th>
+                <th>Hoeveelheid</th>
+                <th>Prijs Totaal</th>
+                <th>Verwijder</th>
+            </tr>
+        </thead>
+
+    </table>
+
+    foreach (var item in Model.Items)
+    {
+
+
+        decimal total = item.Amount * item.Product.Price;
+        <table>
+            <tr>
+                <td>
+                    @item.Product.Title
+                </td>
+
+                <td>
+                    <img class="product-img" src="@item.Product.Image" style="width:100px;" />
+                </td>
+
+                <td>
+                    @item.Product.Price
+                </td>
+
+                <td>
+                    @using (Html.BeginForm("Update", "Cart"))
+                    {
+                        <input type="number" value="1" name="Amount" id="Amount" />
+                        <input type="hidden" value="@item.Product.Id" name="Product.Id" />
+                    }
+                </td>
+
+                <td>
+                    @total
+                </td>
+
+                <td>
+                    <a href="@item.Product.Id">Delete</a>
+                </td>
+            </tr>
+        </table>
+
+    }
+    <tbody>
+        <tfood>
+            <tr>
+                <td colspan="5">Total Cost: @Model.Totalmoney()</td>
+            </tr>
+        </tfood>
+    </tbody>
+
+}

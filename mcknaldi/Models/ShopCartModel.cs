@@ -6,21 +6,22 @@ using System.Web;
 
 namespace mcknaldi.Models
 {
-    public class CartItem
-    {
-        public Product Product { get; set; }
-        public int Id { get; set; }
-        public long EAN { get; set; }
 
-        [Required]
-        [Display(Name = "Aantal")]
-        public int Amount { get; set; }
-    }
 
     public class ShopCartModel
     {
+        public class CartItem
+        {
+            public Product Product { get; set; }
+            public int Id { get; set; }
+            public long EAN { get; set; }
 
-            List<CartItem> items = new List<CartItem>();
+            [Required]
+            [Display(Name = "Aantal")]
+            public int Amount { get; set; }
+        }
+
+        List<CartItem> items = new List<CartItem>();
 
 
             public IEnumerable<CartItem> Items
@@ -39,6 +40,24 @@ namespace mcknaldi.Models
             {
                 item.Amount += Amount;
             }
+        }
+
+        public void Remove(int id)
+        {
+            items.RemoveAll(p => p.Product.Id == id);
+        }
+
+        public decimal Totalmoney()
+        {
+            decimal kq = 0;
+            var total = items.Sum(p => p.Product.Price * p.Amount);
+            if (total != null)kq = (decimal)total;
+            return kq;
+        }
+
+        public void Clear()
+        {
+            items.Clear();
         }
 
 
