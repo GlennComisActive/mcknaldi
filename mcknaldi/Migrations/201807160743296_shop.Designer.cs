@@ -7,13 +7,13 @@ namespace mcknaldi.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class Order : IMigrationMetadata
+    public sealed partial class shop : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Order));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(shop));
         
         string IMigrationMetadata.Id
         {
-            get { return "201807161741495_Order"; }
+            get { return "201807160743296_shop"; }
         }
         
         string IMigrationMetadata.Source
