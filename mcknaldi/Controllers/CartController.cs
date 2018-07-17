@@ -58,7 +58,7 @@ namespace mcknaldi.Controllers
 
         public PartialViewResult Shop()
         {
-            int totalitem = 0;
+            decimal totalitem = 0;
             ShopCartModel cart = Session["Cart"] as ShopCartModel;
             if (cart != null)
                 totalitem = cart.CartTotal();
@@ -72,6 +72,7 @@ namespace mcknaldi.Controllers
 
             //save order
             Order order = new Order();
+            order.OrderName = "Referentie";
             order.OrderCode = "Bestelling-" + DateTime.Now.ToString("dd-MM-yyyy hh:mm");
             order.Date = DateTime.Now;
             order.TotalPrice = cart.CartTotal();
@@ -89,7 +90,7 @@ namespace mcknaldi.Controllers
                 orderlijst.Amount = item.Amount;
                 orderlijst.Price = item.Product.Price;
                 orderlijst.TotalPrice = CartTotal;
-                db.OrderLijsts.Add();
+                db.OrderLijsts.Add(orderlijst);
             }
             db.SaveChanges();
 

@@ -53,11 +53,11 @@ namespace mcknaldi.Models
                 item.Amount = amount;
         }
 
-        public int CartTotal()
+        public decimal CartTotal()
         {
-            int Totaal = 0;
+            decimal Totaal = 0;
             var total = items.Sum(p => p.Product.Price * p.Amount);
-            if (total != null) Totaal = (int)total;
+            if (total != null) Totaal = (decimal)total;
             return Totaal;
         }
 

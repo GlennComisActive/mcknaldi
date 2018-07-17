@@ -401,3 +401,7 @@ C:\Users\Jens Schilder\Documents\Source tree\MCKnaldi\mcknaldi\obj\Debug\mcknald
 C:\Users\Jens Schilder\Documents\Source tree\MCKnaldi\mcknaldi\obj\Debug\mcknaldi.Migrations.orderupdate2.resources
 C:\Users\Jens Schilder\Documents\Source tree\MCKnaldi\mcknaldi\obj\Debug\mcknaldi.Migrations.orderupdate3.resources
 C:\Users\Jens Schilder\Documents\Source tree\MCKnaldi\mcknaldi\obj\Debug\mcknaldi.Migrations.orderupdate4.resources
+C:\Users\dvdbe\OneDrive\Documenten\Visual Studio 2017\Projects\McKnaldi\mcknaldi\mcknaldi\obj\Debug\mcknaldi.Migrations.orderupdate.resources
+C:\Users\dvdbe\OneDrive\Documenten\Visual Studio 2017\Projects\McKnaldi\mcknaldi\mcknaldi\obj\Debug\mcknaldi.Migrations.orderupdate2.resources
+C:\Users\dvdbe\OneDrive\Documenten\Visual Studio 2017\Projects\McKnaldi\mcknaldi\mcknaldi\obj\Debug\mcknaldi.Migrations.orderupdate3.resources
+C:\Users\dvdbe\OneDrive\Documenten\Visual Studio 2017\Projects\McKnaldi\mcknaldi\mcknaldi\obj\Debug\mcknaldi.Migrations.orderupdate4.resources
