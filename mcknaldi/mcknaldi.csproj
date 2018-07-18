@@ -209,6 +209,7 @@
     <Compile Include="Controllers\FroalaApiController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\OrdersController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Controllers\PromotionsController.cs" />
     <Compile Include="Global.asax.cs">
@@ -274,6 +275,7 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Order.cs" />
     <Compile Include="Models\OrderLijst.cs" />
+    <Compile Include="Models\OrderPageViewModel.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\ProductPageViewModel.cs" />
     <Compile Include="Models\Promotion.cs" />
@@ -564,6 +566,8 @@
     <Content Include="Views\Promotions\Edit.cshtml" />
     <Content Include="Views\Promotions\Index.cshtml" />
     <Content Include="Views\Cart\ShopCart.cshtml" />
+    <Content Include="Views\Orders\Details.cshtml" />
+    <Content Include="Views\Orders\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

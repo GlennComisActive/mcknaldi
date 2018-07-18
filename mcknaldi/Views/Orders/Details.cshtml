@@ -1,0 +1,137 @@
+﻿@model mcknaldi.Models.OrderPageViewModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="~/Content/glennstyle.css">
+</head>
+<body>
+    <nav class="navbar sticky-top navbar-expand-lg navbar-dark" style="background-color: #B61C23;">
+        <a class="navbar-brand" href="~/Home/Index">Mcknaldi</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link" href="~/Home/Index">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="/Categories/Index">Producten</a>
+                <a class="nav-item nav-link" href="/Promotions/Index">Aanbiedingen</a>
+                <a class="nav-item nav-link" href="/Cart/ShopCart">Winkelwagen</a>
+
+                @Html.Partial("_LoginPartialWeb")
+            </div>
+        </div>
+    </nav>
+
+    
+
+        @foreach (var item in Model.Orders)
+        {
+            if (ViewBag.OrderCode == item.OrderCode)
+            {
+                <dl class="dl-horizontal">
+                    <dd>
+                        <strong>Bestellings code:</strong> @item.OrderCode
+                    </dd>
+
+                    <dd>
+                        <strong>Bestellings naam:</strong> @item.OrderName
+                    </dd>
+
+                    <dd>
+                        <strong>Bezorg datum:</strong> @item.Date
+                    </dd>
+
+                    <dd>
+                        <strong>Totaal prijs:</strong> @item.TotalPrice
+                    </dd>
+
+                    <dd>
+                        <strong>Status:</strong> @item.Status
+                    </dd>
+
+                </dl>
+
+                <table class="table">
+
+                    <tr>
+                        <th>
+                            Product
+                        </th>
+                        <th>
+                            Prijs
+                        </th>
+                        <th>
+                            Aantal
+                        </th>
+                        <th>
+                            TotaalPrijs
+                        </th>
+                    </tr>
+
+                @foreach (var itemdetail in Model.OrderLijsts)
+                {
+                    if (ViewBag.OrderCode == itemdetail.OrderCode)
+                    {
+                        <tr>
+                            <td>
+                                @itemdetail.ProductName
+                            </td>
+                            <td>
+                                @itemdetail.Price
+                            </td>
+                            <td>
+                                @itemdetail.Amount
+                            </td>
+                            <td>
+                                @itemdetail.TotalPrice
+                            </td>
+                        </tr>
+                    }
+                }
+                </table>
+            }
+        }
+    
+
+    
+    <p>
+        @Html.ActionLink("Terug naar overzicht", "Index")
+    </p>
+    <div class="cat-footer">
+        <div>
+            <img src="http://placehold.it/300x150" />
+            <h5>Socialmedia</h5>
+        </div>
+        <div>
+            <img src="http://placehold.it/300x150" />
+            <h5>Briefaanmelding</h5>
+        </div>
+        <div>
+            <img src="http://placehold.it/300x150" />
+            <h5>Klantenservice</h5>
+        </div>
+    </div>
+    <div class="cat-terms">
+        <p>Algemene voorwaarde</p>
+        <p>Levering en verzending</p>
+        <p>Privacy beleid</p>
+        <p>Onze organisatie</p>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
+</body>
+<foot>
+
+</foot>
+</html>
+

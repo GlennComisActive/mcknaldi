@@ -1,4 +1,6 @@
 ﻿using mcknaldi.Models;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -72,6 +74,9 @@ namespace mcknaldi.Controllers
 
             //save order
             Order order = new Order();
+            var manager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(db));
+            var currentUser = manager.FindById(User.Identity.GetUserId());
+            order.User = currentUser;
             order.OrderName = "Referentie";
             order.OrderCode = "Bestelling-" + DateTime.Now.ToString("dd-MM-yyyy hh:mm");
             order.Date = DateTime.Now;

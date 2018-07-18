@@ -7,16 +7,16 @@
 
         <ul class="nav navbar-nav navbar-right">
             <li class="nav-item ">
-                @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", new { area = "" }, htmlAttributes: new { title = "Manage", area = "", @class = "nav-link" })
+                @Html.ActionLink("Profiel", "Index", "Manage", new { area = "" }, htmlAttributes: new { title = "Manage", area = "", @class = "nav-link" })
             </li>
-            <li class="nav-item"><a href="javascript:document.getElementById('logoutForm').submit()" class="nav-lnk">Log off</a></li>
+            <li class="nav-item"><a href="javascript:document.getElementById('logoutForm').submit()" class="nav-lnk">Uitloggen</a></li>
         </ul>
     }
 }
 else
 {
     <ul class="nav navbar-nav navbar-right">
-        <li class="nav-item">@Html.ActionLink("Register", "Register", "Account", new { area = "" }, htmlAttributes: new { id = "registerLink", @class = "nav-link" })</li>
+        <li class="nav-item">@Html.ActionLink("Registreer", "Register", "Account", new { area = "" }, htmlAttributes: new { id = "registerLink", @class = "nav-link" })</li>
         <li class="nav-item">@Html.ActionLink("Log in", "Login", "Account", new { area = "" }, htmlAttributes: new { id = "loginLink", @class = "nav-link" })</li>
     </ul>
 }
