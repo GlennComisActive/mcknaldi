@@ -13,11 +13,14 @@ namespace mcknaldi.Controllers
     public class PromotionsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
+        PromotionPageViewModel PPVM = new PromotionPageViewModel();
 
         // GET: Promotions
         public ActionResult Index()
         {
-            return View(db.Promotions.ToList());
+            PPVM.Products = db.Products.ToList();
+            PPVM.Promotions = db.Promotions.ToList();
+            return View(PPVM);
         }
 
         // GET: Promotions/Details/5

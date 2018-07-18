@@ -26,8 +26,7 @@
                 <a class="nav-item nav-link" href="~/Home/Index">Home <span class="sr-only">(current)</span></a>
                 <a class="nav-item nav-link" href="/Products/Index">Producten</a>
                 <a class="nav-item nav-link" href="/Promotions/Index">Aanbiedingen</a>
-                <a class="nav-item nav-link" href="#">Winkelwagen</a>
-                <a class="nav-item nav-link" href="#">Bestellen</a>
+                <a class="nav-item nav-link" href="/Cart/ShopCart">Winkelwagen</a>
 
                 @Html.Partial("_LoginPartialWeb")
             </div>
@@ -46,6 +45,8 @@
         {
             @Html.ActionLink("Create", "SetPassword")
         }
+        <h4>Bekijk je Bestellingen</h4>
+        @Html.ActionLink("Index", "Orders")
     </div>
     </body>
 </html>

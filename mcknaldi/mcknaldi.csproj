@@ -279,6 +279,7 @@
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\ProductPageViewModel.cs" />
     <Compile Include="Models\Promotion.cs" />
+    <Compile Include="Models\PromotionPageViewModel.cs" />
     <Compile Include="Models\ShopCartModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -553,17 +554,9 @@
     <Content Include="vendor\font-awesome\scss\_variables.scss" />
     <Content Include="vendor\jquery\jquery.min.map" />
     <Content Include="vendor\jquery\jquery.slim.min.map" />
-    <Content Include="Views\Categories\Create.cshtml" />
-    <Content Include="Views\Categories\Delete.cshtml" />
-    <Content Include="Views\Categories\Details.cshtml" />
-    <Content Include="Views\Categories\Edit.cshtml" />
     <Content Include="Views\Categories\Index.cshtml" />
     <Content Include="Views\Home\Products.cshtml" />
     <Content Include="Views\Shared\_LoginPartialWeb.cshtml" />
-    <Content Include="Views\Promotions\Create.cshtml" />
-    <Content Include="Views\Promotions\Delete.cshtml" />
-    <Content Include="Views\Promotions\Details.cshtml" />
-    <Content Include="Views\Promotions\Edit.cshtml" />
     <Content Include="Views\Promotions\Index.cshtml" />
     <Content Include="Views\Cart\ShopCart.cshtml" />
     <Content Include="Views\Orders\Details.cshtml" />

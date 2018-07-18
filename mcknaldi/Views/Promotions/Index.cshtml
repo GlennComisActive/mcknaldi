@@ -1,4 +1,4 @@
-﻿@model IEnumerable<mcknaldi.Models.Promotion>
+﻿@model mcknaldi.Models.PromotionPageViewModel
 
 @{
     Layout = null;
@@ -24,8 +24,7 @@
                 <a class="nav-item nav-link" href="~/Home/Index">Home <span class="sr-only">(current)</span></a>
                 <a class="nav-item nav-link" href="/Categories/Index">Producten</a>
                 <a class="nav-item nav-link" href="/Promotions/Index">Aanbiedingen</a>
-                <a class="nav-item nav-link" href="#">Winkelwagen</a>
-                <a class="nav-item nav-link" href="#">Bestellen</a>
+                <a class="nav-item nav-link" href="/Cart/ShopCart">Winkelwagen</a>
 
                 @Html.Partial("_LoginPartialWeb")
             </div>
@@ -35,19 +34,46 @@
     <table class="table">
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Title)
+                Titel
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.DiscountPrice)
+                Kortings prijs
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.ValidUntil)
+                Verkrijgbaar tot
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.ProductEAN)
+                Product
             </th>
             <th></th>
         </tr>
+
+        @foreach (var item in Model.Promotions)
+        {
+            if(DateTime.Compare(item.ValidUntil, DateTime.Now) > 0)
+            {
+                <tr>
+                    <td>
+                        @item.Title
+                    </td>
+                    <td>
+                        @item.DiscountPrice
+                    </td>
+                    <td>
+                        @item.ValidUntil
+                    </td>
+                    <td>
+                        @foreach (var product in Model.Products)
+                        {
+                            if (product.EAN == item.ProductEAN)
+                            {
+                                @product.Title
+                            }
+                        }
+                    </td>
+                </tr>
+            }            
+        }
 
 
     </table>
